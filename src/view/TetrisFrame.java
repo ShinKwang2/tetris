@@ -136,13 +136,13 @@ public class TetrisFrame extends JFrame implements ActionListener {
     private void setColors() {
         colors = new Color[9];
         colors[0] = new Color(80, 70, 70);
-        colors[1] = new Color(211, 165, 144);
-        colors[2] = new Color(171, 201, 200);
-        colors[3] = new Color(120, 170 , 130);
-        colors[4] = new Color(20, 150, 170);
-        colors[5] = new Color(135, 149, 158);
-        colors[6] = new Color(190, 183, 114);
-        colors[7] = new Color(210, 153, 210);
+        colors[1] = new Color(0, 102, 255);
+        colors[2] = new Color(255, 102, 204);
+        colors[3] = new Color(0, 153 , 0);
+        colors[4] = new Color(255, 255, 153);
+        colors[5] = new Color(153, 255, 255);
+        colors[6] = new Color(255, 0, 51);
+        colors[7] = new Color(153, 51, 204);
         colors[8] = new Color(0, 0, 0);
     }
 
