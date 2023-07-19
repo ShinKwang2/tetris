@@ -64,9 +64,9 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setBounds(500, 560, 220, 140);
+        bottomPanel.setBounds(500, 540, 220, 140);
         bottomPanel.setBackground(new Color(239,234,227));
-        bottomPanel.setLayout(new GridLayout(3, 1, 10, 10));
+        bottomPanel.setLayout(new GridLayout(3, 1, 5, 5));
 
         startButton = new JButton("게임 시작");
         startButton.addActionListener(this);
@@ -84,6 +84,23 @@ public class TetrisFrame extends JFrame implements ActionListener {
         bottomPanel.add(restartButton);
 
         getContentPane().add(bottomPanel);
+
+        JPanel keyboard = new JPanel(new GridLayout(2, 2));
+        keyboard.setBounds(450, 700, 300, 100);
+        JLabel up = new JLabel("블록 변경: W & ↑");
+        up.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel down = new JLabel("아래 이동: S & ↓");
+        down.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel left = new JLabel("왼쪽 이동: A & ←");
+        left.setHorizontalAlignment(SwingConstants.CENTER);
+        JLabel right = new JLabel("오른쪽 이동: D & →");
+        right.setHorizontalAlignment(SwingConstants.CENTER);
+        keyboard.add(up);
+        keyboard.add(down);
+        keyboard.add(left);
+        keyboard.add(right);
+        getContentPane().add(keyboard);
+
 
         game = new Game(leftTable, rightTable);
 
