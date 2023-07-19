@@ -13,7 +13,7 @@ public class Main {
         TetrisFrame tetris = new TetrisFrame("테트리스");
         tetris.setSize(1200, 860);
         tetris.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        tetris.getContentPane().setBackground(new Color(233, 225, 216));
+        tetris.getContentPane().setBackground(new Color(230, 220, 200));
         tetris.setVisible(true);
 
     }
