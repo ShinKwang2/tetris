@@ -11,18 +11,16 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.List;
 
-import static java.awt.event.KeyEvent.*;
-
 public class TetrisFrame extends JFrame implements ActionListener {
 
-    JButton startButton;
-    JButton pauseButton;
-    JButton restartButton;
+    private JButton startButton;
+    private JButton pauseButton;
+    private JButton restartButton;
 
-    Color[] colors;
+    private Color[] colors;
 
-    Game game;
-    Rank rank;
+    private Game game;
+    private Rank rank;
 
     public TetrisFrame(String title) {
         super(title);
@@ -33,6 +31,7 @@ public class TetrisFrame extends JFrame implements ActionListener {
     }
 
     private void setComponents() {
+
 
         TetrisTable leftTable = new TetrisTable(colors);
         leftTable.setBounds(20, 40, 360, 700);
@@ -46,6 +45,14 @@ public class TetrisFrame extends JFrame implements ActionListener {
         rightTable.initialize();
         getContentPane().add(rightTable);
 
+        JLabel imageLabel = createImageLabel();
+
+        JPanel topPanel = new JPanel();
+        topPanel.setBounds(450, 10, 300, 200);
+        topPanel.setBackground(new Color(230, 220, 200));
+        topPanel.add(imageLabel);
+        getContentPane().add(topPanel);
+
 
         JPanel rankPanel = createRankPanel();
         List<JLabel> rankLabels = createRankLabels();
@@ -57,7 +64,7 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
 
         JPanel bottomPanel = new JPanel();
-        bottomPanel.setBounds(474, 560, 220, 140);
+        bottomPanel.setBounds(500, 560, 220, 140);
         bottomPanel.setBackground(new Color(239,234,227));
         bottomPanel.setLayout(new GridLayout(3, 1, 10, 10));
 
@@ -124,7 +131,7 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
     private JPanel createRankPanel() {
         JPanel rankPanel = new JPanel();
-        rankPanel.setBounds(474, 200, 220, 280);
+        rankPanel.setBounds(500, 250, 220, 280);
         rankPanel.setBackground(new Color(239,234,227));
         rankPanel.setLayout(new GridLayout(6, 1));
 
@@ -148,5 +155,17 @@ public class TetrisFrame extends JFrame implements ActionListener {
         fifth.setHorizontalAlignment(SwingConstants.CENTER);
 
         return List.of(first, second, third, fourth, fifth);
+    }
+
+    private JLabel createImageLabel() {
+        JLabel imageLabel = new JLabel();
+        ImageIcon imageIcon = new ImageIcon(TetrisFrame.class.getResource("/image/tetrisImage.jpeg"));
+        Image image = imageIcon.getImage();
+        Image changeImage = image.getScaledInstance(330, 200, Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(changeImage);
+        imageLabel.setIcon(imageIcon);
+        imageLabel.setBounds(new Rectangle(300, 200));
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        return imageLabel;
     }
 }
