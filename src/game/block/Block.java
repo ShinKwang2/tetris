@@ -1,4 +1,4 @@
-package block;
+package game.block;
 
 import java.util.Arrays;
 

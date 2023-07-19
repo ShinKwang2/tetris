@@ -1,6 +1,10 @@
-import block.Block;
+package game;
+
+import game.block.Block;
 import exception.PauseException;
 import exception.ReGameException;
+import rank.Rank;
+import view.TetrisTable;
 
 import javax.swing.*;
 import java.util.ArrayList;

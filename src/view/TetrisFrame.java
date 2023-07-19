@@ -1,3 +1,8 @@
+package view;
+
+import game.Game;
+import rank.Rank;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -27,6 +32,7 @@ public class TetrisFrame extends JFrame implements ActionListener {
     public TetrisFrame(String title) {
         super(title);
 
+        setBackground(new Color(255, 255, 204));
         this.setLayout(null);
         setColors();
         setComponents();
@@ -34,17 +40,16 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
     private void setComponents() {
 
-        TetrisTable leftPanel = new TetrisTable(colors);
-        leftPanel.setBounds(20, 40, 360, 700);
-        leftPanel.setBackground(new Color(158, 144, 135));
-        leftPanel.initialize();
-        getContentPane().add(leftPanel);
+        TetrisTable leftTable = new TetrisTable(colors);
+        leftTable.setBounds(20, 40, 360, 700);
+        leftTable.initialize();
+        getContentPane().add(leftTable);
 
-        TetrisTable rightPanel = new TetrisTable(colors);
-        rightPanel.setBounds(814, 40, 360, 700);
-        rightPanel.setBackground(new Color(134, 118, 108));
-        rightPanel.initialize();
-        getContentPane().add(rightPanel);
+        TetrisTable rightTable = new TetrisTable(colors);
+        rightTable.setBounds(814, 40, 360, 700);
+        rightTable.setBackground(new Color(134, 118, 108));
+        rightTable.initialize();
+        getContentPane().add(rightTable);
 
 
         JPanel rankPanel = createRankPanel();
@@ -78,7 +83,7 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
         getContentPane().add(bottomPanel);
 
-        game = new Game(leftPanel, rightPanel);
+        game = new Game(leftTable, rightTable);
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -111,14 +116,14 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
     private void setColors() {
         colors = new Color[9];
-        colors[0] = new Color(77, 73, 73);
-        colors[1] = new Color(212, 166, 145);
-        colors[2] = new Color(170, 200, 199);
-        colors[3] = new Color(119, 171 , 131);
-        colors[4] = new Color(200, 170, 171);
+        colors[0] = new Color(80, 70, 70);
+        colors[1] = new Color(211, 165, 144);
+        colors[2] = new Color(171, 201, 200);
+        colors[3] = new Color(120, 170 , 130);
+        colors[4] = new Color(20, 150, 170);
         colors[5] = new Color(135, 149, 158);
         colors[6] = new Color(190, 183, 114);
-        colors[7] = new Color(173, 150, 176);
+        colors[7] = new Color(210, 153, 210);
         colors[8] = new Color(0, 0, 0);
     }
 

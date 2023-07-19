@@ -1,3 +1,7 @@
+package game;
+
+import view.TetrisTable;
+
 import java.util.List;
 
 import static java.awt.event.KeyEvent.*;

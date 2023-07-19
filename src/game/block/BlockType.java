@@ -1,6 +1,4 @@
-package block;
-
-import java.util.Arrays;
+package game.block;
 
 public enum BlockType {
 
