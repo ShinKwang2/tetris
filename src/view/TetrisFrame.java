@@ -24,15 +24,9 @@ public class TetrisFrame extends JFrame implements ActionListener {
     Game game;
     Rank rank;
 
-    List<Integer> keyBoard1 = List.of(VK_A, VK_D, VK_S, VK_W);
-    List<Integer> keyBoard2 = List.of(VK_LEFT, VK_RIGHT, VK_DOWN, VK_UP);
-
-    public TetrisFrame() {}
-
     public TetrisFrame(String title) {
         super(title);
 
-        setBackground(new Color(255, 255, 204));
         this.setLayout(null);
         setColors();
         setComponents();
@@ -42,12 +36,13 @@ public class TetrisFrame extends JFrame implements ActionListener {
 
         TetrisTable leftTable = new TetrisTable(colors);
         leftTable.setBounds(20, 40, 360, 700);
+        leftTable.setBackground(new Color(130, 120, 110));
         leftTable.initialize();
         getContentPane().add(leftTable);
 
         TetrisTable rightTable = new TetrisTable(colors);
         rightTable.setBounds(814, 40, 360, 700);
-        rightTable.setBackground(new Color(134, 118, 108));
+        rightTable.setBackground(new Color(130, 120, 110));
         rightTable.initialize();
         getContentPane().add(rightTable);
 
